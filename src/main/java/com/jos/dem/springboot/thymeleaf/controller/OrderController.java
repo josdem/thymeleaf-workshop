@@ -20,7 +20,7 @@ public class OrderController {
 
   @RequestMapping(method = POST, value = "search")
   public String search(final UserDto userDto) {
-    log.info("zipcode: {}", userDto.getZipCode());
+    log.info("input: {}", userDto);
     return "search";
   }
 }

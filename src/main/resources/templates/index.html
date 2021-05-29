@@ -4,6 +4,20 @@
     <p>Store Locator</p>
     <label for="Postal_Code_Sep">Zip Code:</label>
     <input type="tel" id="Postal_Code_Sep" th:field="*{zipCode}" name="Postal Code">
+    <br/>
+    <label for="City_Sep">City:</label>
+    <input type="text" id="City_Sep" th:field="*{city}" name="City">
+    <br/>
+    <label for="Region_Sep">State:</label>
+    <select id="Region_Sep" th:field="*{state}" name="Region">
+        <option value="AK">AK</option>
+        <option value="AL">AL</option>
+        <option value="AR">AR</option>
+        <option value="AZ">AZ</option>
+        <option value="CA">CA</option>
+        <option value="MI">MI</option>
+        <option value="TX">TX</option>
+    </select>
     <br/><br/>
     <button type="submit">Search Locations</button>
 </form>
