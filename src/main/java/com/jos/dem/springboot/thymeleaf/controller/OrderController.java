@@ -10,4 +10,9 @@ public class OrderController {
     public String index(){
         return "index";
     }
+
+    @RequestMapping("/search")
+    public String search(){
+        return "search";
+    }
 }
