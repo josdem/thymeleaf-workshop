@@ -1,11 +1,11 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <body>
 <form th:action="@{/search}" th:object="${userDto}" method='POST'>
-  <p>Store Locator</p>
-  <label for="zipCode">Zip Code:</label>
-  <input type="tel" id="zipCode" th:field="*{zipCode}" name="Postal Code">
-  <br/><br/>
-  <button type="submit">Search Locations</button>
+    <p>Store Locator</p>
+    <label for="zipCode">Zip Code:</label>
+    <input type="tel" id="zipCode" th:field="*{zipCode}" name="Postal Code">
+    <br/><br/>
+    <button type="submit">Search Locations</button>
 </form>
 </body>
 </html>

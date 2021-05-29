@@ -12,15 +12,15 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 @Controller
 public class OrderController {
 
-    @RequestMapping("/")
-    public String index(final Model model){
-        model.addAttribute("userDto", new UserDto());
-        return "index";
-    }
+  @RequestMapping("/")
+  public String index(final Model model) {
+    model.addAttribute("userDto", new UserDto());
+    return "index";
+  }
 
   @RequestMapping(method = POST, value = "search")
   public String search(final UserDto userDto) {
-        log.info("zipcode: {}", userDto.getZipCode());
-        return "search";
-    }
+    log.info("zipcode: {}", userDto.getZipCode());
+    return "search";
+  }
 }

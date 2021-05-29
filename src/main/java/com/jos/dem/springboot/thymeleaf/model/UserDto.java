@@ -5,6 +5,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class UserDto implements DomainTransferObject{
-    private String zipCode;
+public class UserDto implements DomainTransferObject {
+  private String zipCode;
 }
