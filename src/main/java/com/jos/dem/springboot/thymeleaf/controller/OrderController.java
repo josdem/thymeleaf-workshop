@@ -23,4 +23,9 @@ public class OrderController {
     log.info("input: {}", userDto);
     return "search";
   }
+
+  @RequestMapping("/entrees")
+  public String entrees() {
+    return "allEntrees";
+  }
 }
