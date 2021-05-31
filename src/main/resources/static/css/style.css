@@ -1,6 +1,16 @@
-.media {
+.media-pizza {
   border: 5px outset red;
   background-color: lightblue;
+  text-align: center;
+}
+.media-salad {
+  border: 5px outset red;
+  background-color: lightgreen;
+  text-align: center;
+}
+.media-drink {
+  border: 5px outset red;
+  background-color: lightcoral;
   text-align: center;
 }
 .link {
