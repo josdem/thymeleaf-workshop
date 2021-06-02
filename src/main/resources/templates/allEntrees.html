@@ -4,19 +4,20 @@
 </head>
 <body>
 <div class="media-pizza">
-    <a th:href="@{/checkout?item=pizza}">
+    <a th:href="@{/checkout?item=Pizza}">
         <h2>Pizza</h2>
     </a>
 </div>
 <div class="media-salad">
-    <h2>Salad</h2>
+    <a th:href="@{/checkout?item=Salad}">
+        <h2>Salad</h2>
+    </a>
 </div>
 <div class="media-drink">
-    <h2>Drink</h2>
+    <a th:href="@{/checkout?item=Drink}">
+        <h2>Drink</h2>
+    </a>
 </div>
 <br>
-<div style="text-align: center">
-    <button type="submit">Checkout</button>
-</div>
 </body>
 </html>

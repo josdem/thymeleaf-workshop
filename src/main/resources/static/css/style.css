@@ -13,6 +13,14 @@
   background-color: lightcoral;
   text-align: center;
 }
+.media-cart {
+  border: 5px outset lightblue;
+  height: 50px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  background-color: red;
+}
 .link {
    color: red;
 }
