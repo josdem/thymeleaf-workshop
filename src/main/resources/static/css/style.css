@@ -1,3 +1,21 @@
+.media-form {
+  width:200px;
+  padding:20px;
+  margin: 0 auto;
+}
+.media-input {
+  width:100%;
+  padding: 10px;
+  margin:10px 0;
+  border-radius:10px;
+  border: 0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+.media-select {
+  width: 100%;
+  padding:10px;
+  border-radius:10px;
+}
 .media-pizza {
   border: 5px outset red;
   background-color: lightblue;
@@ -26,7 +44,9 @@
   weight: 5em;
 }
 .media-button {
+  width:100%;
   background-color: red;
+  border: 0;
   color: white;
   padding: 14px 25px;
   text-align: center;

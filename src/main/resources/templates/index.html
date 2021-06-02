@@ -1,15 +1,19 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
 <body>
-<form th:action="@{/search}" th:object="${userDto}" method='POST'>
-    <p>Store Locator</p>
+<div>
+<form class="media-form" th:action="@{/search}" th:object="${userDto}" method='POST'>
+    <h2>Store Locator</h2>
     <label for="Postal_Code_Sep">Zip Code:</label>
-    <input type="tel" id="Postal_Code_Sep" th:field="*{zipCode}" name="Postal Code">
+    <input class="media-input" type="tel" id="Postal_Code_Sep" th:field="*{zipCode}" name="Postal Code">
     <br/>
     <label for="City_Sep">City:</label>
-    <input type="text" id="City_Sep" th:field="*{city}" name="City">
+    <input class="media-input" type="text" id="City_Sep" th:field="*{city}" name="City">
     <br/>
     <label for="Region_Sep">State:</label>
-    <select id="Region_Sep" th:field="*{state}" name="Region">
+    <select class="media-select" id="Region_Sep" th:field="*{state}" name="Region">
         <option value="AK">AK</option>
         <option value="AL">AL</option>
         <option value="AR">AR</option>
@@ -19,7 +23,8 @@
         <option value="TX">TX</option>
     </select>
     <br/><br/>
-    <button type="submit">Search Locations</button>
+    <button class="media-button" type="submit">Search Locations</button>
 </form>
+</div>
 </body>
 </html>
