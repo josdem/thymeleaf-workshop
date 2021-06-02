@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Slf4j
 @Controller
@@ -27,5 +28,11 @@ public class OrderController {
   @RequestMapping("/entrees")
   public String entrees() {
     return "allEntrees";
+  }
+
+  @RequestMapping("/checkout")
+  public String checkout(@RequestParam("item") String item) {
+    log.info("Item: {}", item);
+    return "checkout";
   }
 }
