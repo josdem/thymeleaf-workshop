@@ -2,6 +2,7 @@ package com.jos.dem.springboot.thymeleaf.controller;
 
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
+import com.jos.dem.springboot.thymeleaf.model.ItemDto;
 import com.jos.dem.springboot.thymeleaf.model.UserDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -31,8 +32,10 @@ public class OrderController {
   }
 
   @RequestMapping("/checkout")
-  public String checkout(@RequestParam("item") String item) {
-    log.info("Item: {}", item);
+  public String checkout(@RequestParam("item") String name, final Model model) {
+    log.info("Item: {}", name);
+    ItemDto itemDto = new ItemDto(name);
+    model.addAttribute(itemDto);
     return "checkout";
   }
 }
