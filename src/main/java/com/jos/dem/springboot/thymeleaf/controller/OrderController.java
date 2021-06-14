@@ -1,41 +1,41 @@
 package com.jos.dem.springboot.thymeleaf.controller;
 
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
-
 import com.jos.dem.springboot.thymeleaf.model.ItemDto;
 import com.jos.dem.springboot.thymeleaf.model.UserDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import reactor.core.publisher.Mono;
 
 @Slf4j
 @Controller
 public class OrderController {
 
-  @RequestMapping("/")
-  public String index(final Model model) {
+  @GetMapping("/")
+  public Mono<String> index(final Model model) {
     model.addAttribute("userDto", new UserDto());
-    return "index";
+    return Mono.just("index");
   }
 
-  @RequestMapping(method = POST, value = "search")
-  public String search(final UserDto userDto) {
+  @PostMapping(value = "search")
+  public Mono<String> search(final UserDto userDto) {
     log.info("input: {}", userDto);
-    return "search";
+    return Mono.just("search");
   }
 
-  @RequestMapping("/entrees")
-  public String entrees() {
-    return "allEntrees";
+  @GetMapping("/entrees")
+  public Mono<String> entrees() {
+    return Mono.just("allEntrees");
   }
 
-  @RequestMapping("/checkout")
-  public String checkout(@RequestParam("item") String name, final Model model) {
+  @GetMapping("/checkout")
+  public Mono<String> checkout(@RequestParam("item") String name, final Model model) {
     log.info("Item: {}", name);
     ItemDto itemDto = new ItemDto(name);
     model.addAttribute(itemDto);
-    return "checkout";
+    return Mono.just("checkout");
   }
 }
