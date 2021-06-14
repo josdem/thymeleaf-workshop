@@ -32,4 +32,22 @@ class OrderControllerTest {
                   "should contains expected title");
             });
   }
+
+  @Test
+  @DisplayName("Search")
+  void shouldCallSearchPage() {
+    webTestClient
+        .post()
+        .uri("/search")
+        .exchange()
+        .expectStatus()
+        .isOk()
+        .expectBody(String.class)
+        .consumeWith(
+            result -> {
+              assertTrue(
+                  result.getResponseBody().contains("<title>Service Method</title>"),
+                  "should contains expected title");
+            });
+  }
 }
