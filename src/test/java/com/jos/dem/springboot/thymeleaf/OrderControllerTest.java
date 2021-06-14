@@ -34,7 +34,7 @@ class OrderControllerTest {
   }
 
   @Test
-  @DisplayName("Search")
+  @DisplayName("Select service method")
   void shouldCallSearchPage() {
     webTestClient
         .post()
@@ -47,6 +47,24 @@ class OrderControllerTest {
             result -> {
               assertTrue(
                   result.getResponseBody().contains("<title>Service Method</title>"),
+                  "should contains expected title");
+            });
+  }
+
+  @Test
+  @DisplayName("Select entries")
+  void shouldShowSelectEntriesPage() {
+    webTestClient
+        .get()
+        .uri("/entrees")
+        .exchange()
+        .expectStatus()
+        .isOk()
+        .expectBody(String.class)
+        .consumeWith(
+            result -> {
+              assertTrue(
+                  result.getResponseBody().contains("<title>All Entries</title>"),
                   "should contains expected title");
             });
   }
