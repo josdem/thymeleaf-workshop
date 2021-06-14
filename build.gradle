@@ -35,3 +35,4 @@ test {
 }
 
 bootRun.dependsOn rootProject.tasks['googleJavaFormat']
+test.dependsOn rootProject.tasks['googleJavaFormat']
