@@ -68,4 +68,22 @@ class OrderControllerTest {
                   "should contains expected title");
             });
   }
+
+  @Test
+  @DisplayName("Show checkout")
+  void shouldShowCheckoutPage() {
+    webTestClient
+        .get()
+        .uri(uriBuilder -> uriBuilder.path("/checkout").queryParam("item", "pizza").build())
+        .exchange()
+        .expectStatus()
+        .isOk()
+        .expectBody(String.class)
+        .consumeWith(
+            result -> {
+              assertTrue(
+                  result.getResponseBody().contains("<title>Checkout</title>"),
+                  "should contains expected title");
+            });
+  }
 }
