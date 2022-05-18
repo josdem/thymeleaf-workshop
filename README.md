@@ -6,13 +6,13 @@ Thymeleaf Workshop
 
 This project shows different ways to handle HTML5 elements using [Thymeleaf](https://www.thymeleaf.org/) having [Spring Webflux](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html) as backend.
 
-#### To run the project
+#### To run the project with Gradle
 
 ```bash
 gradle bootRun
 ```
 
-#### To run tests
+#### To run tests with Gradle
 
 ```bash
 gradle test
@@ -21,12 +21,20 @@ gradle test
 #### To run tests with Jacoco and Sonarqube
 
 ```bash
-gradle -Dsonar.login=${SONAR_TOKEN} jacocoTestReport sonarqube test
+gradle jacocoTestReport sonarqube test
 ```
 
-Where:
+#### To run the project with Maven
 
-- `${SONAR_TOKEN}` is a sonar token to authenticate with the server (Ask me for it :)
+```bash
+mvn spring-boot:run
+```
+
+#### To run tests with Gradle
+
+```bash
+mvn test
+```
 
 #### Read this as reference
 
